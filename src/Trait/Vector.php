@@ -79,7 +79,7 @@ trait Vector
      */
     public function query(
         string $collection_name,
-        string $filter,
+        ?string $filter = null,
         ?array $output_fields = null,
         ?array $partition_names = null,
         ?int $limit = null,
