@@ -13,6 +13,16 @@ trait Collections
         return new \Milvus\Http\Collections($this);
     }
 
+    /**
+     * This operation flushes the streaming data and seals segments. It is recommended to call this operation after all the data has been inserted into a collection.
+     */
+    public function flushCollection(string $collection_name)
+    {
+        return (new Collections($this))->flush([
+            'collectionName' => $collection_name
+        ]);
+    }
+
     public function releaseCollection(string $collection_name)
     {
         return (new Collections($this))->release([
