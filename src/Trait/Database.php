@@ -1,6 +1,6 @@
 <?php
 
-namespace Milvus\Trait;
+namespace Milvus\MTrait;
 
 use Milvus\Http\Databases;
 

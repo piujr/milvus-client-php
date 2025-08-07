@@ -1,6 +1,6 @@
 <?php
 
-namespace Milvus\Trait;
+namespace Milvus\MTrait;
 
 use Milvus\CollectionSchema;
 use Milvus\IndexParams;
@@ -18,14 +18,14 @@ trait Collections
      */
     public function flushCollection(string $collection_name)
     {
-        return (new Collections($this))->flush([
+        return $this->collections()->flush([
             'collectionName' => $collection_name
         ]);
     }
 
     public function releaseCollection(string $collection_name)
     {
-        return (new Collections($this))->release([
+        return $this->collections()->release([
             'collectionName' => $collection_name
         ]);
     }
@@ -145,17 +145,17 @@ trait Collections
      * This operation creates a collection schema.
      */
     public function createSchema(
-        ?bool $auto_id = null,
-        ?bool $enable_dynamic_field = null,
-        ?string $primary_field = null,
-        ?string $partition_key_field = null,
+        bool $auto_id = null,
+        bool $enable_dynamic_field = null,
+        string $primary_field = null,
+        string $partition_key_field = null
     ) {
         return new CollectionSchema(
-            fields: [],
-            auto_id: $auto_id,
-            enable_dynamic_field: $enable_dynamic_field,
-            primary_field: $primary_field,
-            partition_key_field: $partition_key_field,
+             [],
+            $auto_id,
+             $enable_dynamic_field,null,
+             $primary_field,
+             $partition_key_field,
         );
     }
 

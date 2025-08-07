@@ -1,6 +1,6 @@
 <?php
 
-namespace Milvus\Trait;
+namespace Milvus\MTrait;
 
 use Milvus\Http\Partitions as MilvusPartitions;
 
@@ -46,7 +46,7 @@ trait Partitions
         ]);
     }
 
-    public function loadPartition(string $collection_name, string|array $partition_name)
+    public function loadPartition(string $collection_name,  $partition_name)
     {
         if (is_string($partition_name)) {
             $partition_name = [$partition_name];
@@ -57,7 +57,7 @@ trait Partitions
         ]);
     }
 
-    public function releasePartition(string $collection_name, string|array $partition_name)
+    public function releasePartition(string $collection_name,  $partition_name)
     {
         if (is_string($partition_name)) {
             $partition_name = [$partition_name];

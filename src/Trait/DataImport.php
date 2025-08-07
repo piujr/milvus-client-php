@@ -1,6 +1,6 @@
 <?php
 
-namespace Milvus\Trait;
+namespace Milvus\MTrait;
 
 use Milvus\Http\JobsImport;
 
@@ -17,7 +17,7 @@ trait DataImport
         string $collection_name,
         ?string $partition_name = null,
         ?array $files = null,
-        ?array $options = null,
+        ?array $options = null
 
     ) {
         return (new JobsImport($this))->create([

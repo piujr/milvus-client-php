@@ -11,24 +11,24 @@ use Milvus\Http\Users;
 
 class Client
 {
-    use Trait\Authentication;
-    use Trait\Collections;
-    use Trait\Vector;
-    use Trait\Database;
-    use Trait\Partitions;
-    use Trait\ResourceGroup;
-    use Trait\DataImport;
-    use Trait\Indexes;
+    use MTrait\Authentication;
+    use MTrait\Collections;
+    use MTrait\Vector;
+    use MTrait\Database;
+    use MTrait\Partitions;
+    use MTrait\ResourceGroup;
+    use MTrait\DataImport;
+    use MTrait\Indexes;
 
     private $client;
     private $dbName = "default";
     public function __construct(
         string $uri = "http://localhost:19530",
-        ?string $user = null,
-        ?string $password = null,
-        ?string $db_name = "default",
-        ?string $token = null,
-        ?float $timeout = null,
+        string $user = null,
+        string $password = null,
+        string $db_name = "default",
+        string $token = null,
+        float $timeout = null
     ) {
         $headers = [
             "Content-Type" => "application/json",
